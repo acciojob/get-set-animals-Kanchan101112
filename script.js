@@ -1,33 +1,38 @@
 //complete this code
 class Animal {
-	constructor(species){
-		this.species = species;
-	}
-	get species(){
-		return this.species;
-	}
-	 makeSound() {
+    constructor(species) {
+        this._species = species; // Use a private variable
+    }
+
+    makeSound() {
         console.log(`The ${this.species} makes a sound`);
+    }
+
+    get species() {
+        return this._species; // Return the private variable
     }
 }
 
-class Dog extends Animal { constructor(species) {
-    super("Dog"); 
-  }
+class Dog extends Animal {
+    constructor(species) {
+        super(species); // Pass species to the parent constructor
+    }
 
-  bark() {
-    console.log("woof");
-  }
+    bark() {
+        console.log("woof");
+    }
 }
 
 class Cat extends Animal {
-	constructor(species){
-		super("Cat");
-		this.species = species;
-	}
-	purr(){
-	console.log("purr")	
-	}
+    constructor(species) {
+        super(species); // Pass species correctly
+    }
+
+    purr() {
+        console.log("purr");
+    }
+}
+
 // Creating an instance of Cat
 const myCat = new Cat("Siamese");
 myCat.makeSound();
@@ -43,7 +48,9 @@ myDog.makeSound();
 
 myDog.bark();
 // Expected Output: woof
+
 // Do not change the code below this line
 window.Animal = Animal;
 window.Dog = Dog;
 window.Cat = Cat;
+
