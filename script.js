@@ -21,8 +21,9 @@ class Dog extends Animal { constructor() {
 }
 
 class Cat extends Animal {
-	constructor(){
-		super("Cat")
+	constructor(species){
+		super("Cat");
+		this.species = species;
 	}
 	purr(){
 	console.log("purr")	
