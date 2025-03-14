@@ -11,7 +11,7 @@ class Animal {
     }
 }
 
-class Dog extends Animal { constructor() {
+class Dog extends Animal { constructor(species) {
     super("Dog"); 
   }
 
